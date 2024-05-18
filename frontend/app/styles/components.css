@@ -1,0 +1,49 @@
+/* loader */
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 5px;
+	animation: blink 1.4s infinite both;
+}
+
+.dot:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0.2;
+	}
+	20% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+
+/* collapsible */
+.collapsible-content {
+	overflow: hidden;
+	transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.collapsible-content.open {
+	opacity: 1;
+}
+
+.collapsible-content.closed {
+	max-height: 0;
+	opacity: 0;
+}
