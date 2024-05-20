@@ -24,9 +24,12 @@ const CreatorCard: React.FC<CreatorCardProps> = ({
 			onClick={onClick}
 			className="hover:shadow-lg transition-shadow duration-300"
 			data-testid="creator-card"
+			aria-label={`Creator card for ${username}`}
 		>
-			<h2 className="text-lg font-bold">#{rank}</h2>
-			<div className="flex justify-center items-center mt-4">
+			<header>
+				<h2 className="text-lg font-bold">#{rank}</h2>
+			</header>
+			<figure className="flex justify-center items-center mt-4">
 				<Image
 					src={creatorImage}
 					alt={`${username}'s profile`}
@@ -34,12 +37,12 @@ const CreatorCard: React.FC<CreatorCardProps> = ({
 					height={150}
 					className="rounded-full"
 				/>
-			</div>
-			<div className="mt-4 text-center">
+			</figure>
+			<article className="mt-4 text-center">
 				<h3 className="text-lg font-medium">{username}</h3>
 				<p className="text-sm text-gray-500">{email}</p>
 				<p className="mt-2 text-xs">Product Count: {productCount}</p>
-			</div>
+			</article>
 		</Card>
 	);
 };

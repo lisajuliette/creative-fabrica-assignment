@@ -13,20 +13,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
 	createTime,
 }) => {
 	return (
-		<Card>
-			<Image
-				src={productImage}
-				alt={productName}
-				width={275}
-				height={275}
-				className="rounded-lg"
-			/>
-			<div className="mt-2">
-				<div className="text-lg font-medium">{productName}</div>
-				<div className="text-xs text-gray-500">
+		<Card aria-label={`Product card for ${productName}`}>
+			<article>
+				<figure>
+					<Image
+						src={productImage}
+						alt={productName}
+						width={275}
+						height={275}
+						className="rounded-lg"
+					/>
+				</figure>
+				<header className="mt-2">
+					<h3 className="text-lg font-medium">{productName}</h3>
+				</header>
+				<time className="text-xs text-gray-500" dateTime={createTime}>
 					Created At: {new Date(createTime).toLocaleString()}
-				</div>
-			</div>
+				</time>
+			</article>
 		</Card>
 	);
 };

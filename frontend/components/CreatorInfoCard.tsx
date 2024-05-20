@@ -12,7 +12,10 @@ const CreatorInfoCard: React.FC<CreatorInfoCardProps> = ({
 	email,
 }) => {
 	return (
-		<div className="flex gap-2 items-center p-4 bg-white rounded-lg shadow-md">
+		<article
+			className="flex gap-2 items-center p-4 bg-white rounded-lg shadow-md"
+			aria-label="Creator Information"
+		>
 			<Image
 				src={creatorImage}
 				alt={`${username}'s profile`}
@@ -21,10 +24,10 @@ const CreatorInfoCard: React.FC<CreatorInfoCardProps> = ({
 				className="rounded-full"
 			/>
 			<div className="text-left">
-				<div className="text-lg font-medium">{username}</div>
-				<div className="text-sm text-gray-500">{email}</div>
+				<h2 className="text-lg font-medium">{username}</h2>
+				<p className="text-sm text-gray-500">{email}</p>
 			</div>
-		</div>
+		</article>
 	);
 };
 

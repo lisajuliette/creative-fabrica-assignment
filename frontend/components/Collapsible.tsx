@@ -30,6 +30,7 @@ const Collapsible: React.FC<CollapsibleProps> = ({ children, isOpen }) => {
 				opacity: isOpen ? 1 : 0,
 			}}
 			className="overflow-hidden"
+			aria-expanded={isOpen}
 		>
 			{children}
 		</div>

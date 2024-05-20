@@ -5,6 +5,7 @@ export interface CardProps {
 	className?: string;
 	onClick?: () => void;
 	'data-testid'?: string;
+	'aria-label'?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -12,17 +13,19 @@ const Card: React.FC<CardProps> = ({
 	className,
 	onClick,
 	'data-testid': testId,
+	'aria-label': ariaLabel,
 }) => {
 	return (
-		<div
+		<section
 			className={`p-4 bg-white rounded-lg shadow-md ${className} ${
 				onClick ? 'cursor-pointer' : ''
 			}`}
 			onClick={onClick}
 			data-testid={testId}
+			aria-label={ariaLabel}
 		>
 			{children}
-		</div>
+		</section>
 	);
 };
 
